@@ -1,0 +1,36 @@
+
+/*reset*/
+html, body, div, h1, h2, h3, em, ul, li, section {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+
+h2 {
+  border-bottom: 3px solid #ccc;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+ul {
+  list-style: none;
+}
+
+.ui-autocomplete-category {
+	font-weight: bold;
+	padding: .2em .4em;
+	margin: .8em 0 .2em;
+	line-height: 1.5;
+}
+
+#dialog label, #dialog input { display:block; z-index: -1 }
+#dialog label { margin-top: 0.5em; z-index: -1; }
+#dialog input, #dialog textarea { width: 95%; z-index: -1 }
+#tabs { margin-top: 1em; }
+#tabs li .ui-icon-close { float: left; margin: 0.4em 0.2em 0 0; cursor: pointer; }
+#add_tab { cursor: pointer; }
