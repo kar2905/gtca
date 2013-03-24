@@ -5,145 +5,23 @@
   <%= include lib %>
   <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" media="all">
   <script src="/javascripts/dinab.js"></script>
+  <script src="/javascripts/app.js"></script>
+  <%= include templates %>
 </head>
 <body>
-	<div class="top-nav">
-    <img src="images/logo.png"></img>
-		<div class="doctor-id">
-			<h4>Welcome back, Dr. Lee.</h4>
-		</div>
-	</div>
-  <div class="container-fluid">
-  <div class="row-fluid">
-    <div class="span2 patient-view">
-    <div class="patient-profile">
-	  	<img src="images/profile.png">
-  	</div>
-      <h2 class = "header basic">Patient Information</h2>
-      <div class="list-containers">
-	      <ul class = "categories">
-	        <li>Name</li>
-	        <li>Birthdate</li>
-	        <li>Gender</li>
-	        <li>MR</li>
-	        <li>Acct No.</li>
-	      </ul>
-	      <ul class = "patient-info">
-	        <li>John Doe</li>
-	        <li>3/10/1960</li>
-	        <li>Male</li>
-	        <li>123456789</li>
-	        <li>987654321</li>
-	      </ul>
-      </div>
-      <h2 class = "header med">Recent Medication</h2>
-      <div class="list-containers">
-	      <ul class = "drugs">
-	        <li>Cordarone 1mg</li>
-	        <li class = "date">03/21/12</li>
-	        <li>Zyprexa Zydis 2mg</li>
-	        <li class = "date">02/12/12</li>
-	        <li>Naproxen 2mg</li>
-	        <li class = "date">02/21/13</li>
-	      </ul>
-      </div>
-      <h2 class = "header cond">Recent Conditions</h2>
-      <div class="list-containers">
-	      <ul class = "conditions">
-	        <li>Atrial Fibrillation</li>
-	        <li class = "date">03/21/12</li>
-	        <li>Diabetes, Type 1</li>
-	        <li class = "date">05/12/12</li>
-	        <li>Knee Surgery</li>
-	        <li class = "date">02/21/13</li>
-	      </ul>
-      </div>
-      <div class="button-container">
-      	<button id = "profile" type = "submit">View Complete Profile</button>
-      </div>
-  	</div>
-    <div class="span10 dose-adjustment">
-
-        <div class = "condition">
-            <input id = "search" type="text" name="condition" title="Condition" style="color:#888;" 
-            value="Enter a Condition" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
-        <button id = "confirm" type = "submit">Confirm</button>
-        </div>
-
-       
-
-        <div class = "drug-content">
-            <div id="dialog" title="Calculate Dose">
-                <form>
-              <fieldset class="ui-helper-reset">
-                      <!--<label for="search2">Search: </label>
-                    <input id="search2" />-->
-                    <input id = "search2" type="text" name="drug" title="drug" style="color:#888;" 
-                    value="Enter a Drug" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
-              </fieldset>
-                </form>
-            </div>
-
-           
-     
-            <div id="tabs">
-                <ul>
-                    <!--<li><a href="#tabs-1">Warfarin</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>-->
-                    <button id="add_tab">+</button>
-                </ul>
-                <div id="tabs-1"> </div>
-            </div>
-
-        </div>
-        
-        
-        
-        <div id="content">
-            <div id="dose">
-            	John Doe should take<br>
-                2mg
-            </div>
-            
-            <div id="avg-dose">
-            	Avg. Dose
-                without genetic info
-            </div>
-            
-            <br><br><br>
-            
-            <table id="factors-table">
-                <tr>
-                    <td>Genotype/Phenotype Factors</td>
-                    <td>Importance in Prediction</td>
-                </tr>
-                <tr>
-                    <td><img src="abc"></td>
-                    <td>CYP2C9*2</td>
-                    <td>UP</td>
-                    <td><button type="submit">LEARN MORE</button></td>
-                </tr>
-                <tr>
-                    <td><img src="abc"></td>
-                    <td>VKORC11639/3673AA</td>
-                    <td>UP</td>
-                    <td><button type="submit">LEARN MORE</button></td>
-                </tr>
-                <tr>
-                    <td><img src="abc"></td>
-                    <td>Asian</td>
-                    <td>DOWN</td>
-                    <td><button type="submit">LEARN MORE</button></td>
-                </tr>                    <tr>
-                    <td><img src="abc"></td>
-                    <td>Heart Surgery</td>
-                    <td>DOWN</td>
-                    <td><button type="submit">LEARN MORE</button></td>
-                </tr>
-            </table>
-            
-            
-        </div>
+  <script type="text/x-handlebars">
+    <div class="top-nav">
+      <img src="images/logo.png"></img>
+      <div class="doctor-id">Welcome back, Dr. Lee.</div>
     </div>
-  </div></div>
+    <div class="container-fluid"><div class="row-fluid">
+      <div class="span2 patient-view">
+        {{ outlet patient_view }}
+      </div>
+      <div class="span10 dose-adjustment">
+        {{ outlet }}
+      </div>
+    </div></div>
+  </script>
 </body>
 </html>
