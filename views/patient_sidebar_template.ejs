@@ -1,14 +1,13 @@
 <div id="patient-overview">
-<div id="patient-overview">
   <img class="photo" src="images/profile.png">
   <div class="basic-info">
     <h1 class="header basic">Patient Information</h2>
     <table>
-      <tr><td>Name</td><td>John Doe</td></tr>
-      <tr><td>Birthdate</td><td>3/10/1960</td>
-      <tr><td>Gender</td><td>Male</td></tr>
-      <tr><td>MR</td><td>123456789</td></tr>
-      <tr><td>Acct No.</td><td>987654321</td></tr>
+      <tr><td>Name</td><td>{{ first_name }} {{ last_name }}</td></tr>
+      <tr><td>Birthdate</td><td>{{ birth_date }}</td>
+      <tr><td>Gender</td><td>{{ gender }}</td></tr>
+      <tr><td>MR</td><td>{{ mr_id }}</td></tr>
+      <tr><td>Acct No.</td><td>{{ acct_id }}</td></tr>
     </table>
   </div>
   <div class="recent-medications">

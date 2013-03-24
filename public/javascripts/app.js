@@ -3,23 +3,51 @@ GTCA.ApplicationController = Ember.Controller.extend({
 });
 
 GTCA.Router.map(function() {
-  this.route("dosing");
+  this.resource('patient', { path: '/patient/:patient_id' }, function() {
+    this.route("dosing");
+  });
 });
 
-GTCA.DosingController = Ember.Controller.extend({
-  fu: 'd'
+GTCA.IndexRoute = Ember.Route.extend({
+  redirect: function() {
+    this.transitionTo('patient', { id: 1 });
+  }
 });
 
-GTCA.PatientController = Ember.Controller.extend({
+GTCA.PatientDosingRoute = Ember.Route.extend({
+  model: function() {
+    return [];
+  }
+});
+
+GTCA.PatientRoute = Ember.Route.extend({
+  renderTemplate: function() {
+    this.render();
+    this.render('patient-sidebar', {
+                  into: 'patient',
+                  outlet: 'patient_view'
+                });
+  },
+  model: function(params) {
+    return {
+      id: 1,
+      first_name: 'George',
+      last_name: 'Clooney',
+      birth_date: '3/10/1960',
+      gender: 'Male',
+      mr_id: 123213,
+      acct_id: 13123
+    }
+  }
+});
+
+GTCA.PatientDosingController = Ember.ArrayController.extend({
+  title: 'Dose Adjustment'
+});
+
+GTCA.PatientIndexController = Ember.ObjectController.extend({
+  title: 'Home'
 });
 
 GTCA.ApplicationRoute = Ember.Route.extend({
-  renderTemplate: function() {
-    this.render();
-    this.render('patient', {
-                  into: 'application',
-                  outlet: 'patient_view',
-                  controller: 'patient'
-                });
-  }
 });

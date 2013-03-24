@@ -1,12 +1,22 @@
-<script type="text/x-handlebars" data-template-name="index">
-  {{#linkTo dosing}} Dosing {{/linkTo}}
+<script type="text/x-handlebars" data-template-name="patient/index">
+  <div class="title">{{ title }}</div>
+  {{#linkTo patient.dosing}} Dosing {{/linkTo}}
 </script>
 
+
+<script type="text/x-handlebars" data-template-name="patient-sidebar">
+  <%= include patient_sidebar_template %>
+</script>
+
+<script type="text/x-handlebars" data-template-name="patient/dosing">
+  <%= include patient_dosing_template %>
+</script>
 
 <script type="text/x-handlebars" data-template-name="patient">
-  <%= include patient_overview_template %>
-</script>
-
-<script type="text/x-handlebars" data-template-name="dosing">
-  <%= include dosing_template %>
+  <div id="sidebar">
+    {{ outlet patient_view }}
+  </div>
+  <div id="module" class="container-fluid">
+    {{ outlet }}
+  </div>
 </script>

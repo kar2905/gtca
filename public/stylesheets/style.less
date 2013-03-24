@@ -2,12 +2,30 @@
 
 body {
   font-size: 0.8em;
+  font-family: 'MetaPlusNormal-Roman';
+  -webkit-font-smoothing: antialiased;
+}
+
+.bolded {
+  font-family: 'MetaPlusBold-Roman';
 }
 
 @sidebar-width: 200px;
 
 #module {
   margin-left: @sidebar-width;
+  padding: 0;
+
+  div.title {
+    .gradient(#3f3f3f, #373737, #414141);
+    text-shadow: 0px 0px 3px black;  
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 1.3em;
+    color: #eee;
+    padding: 10px 0;
+    .bolded;
+  }
 }
 
 #sidebar #patient-overview {
@@ -33,7 +51,7 @@ body {
     font-size: 1em;
     padding: 10px 15px;
 
-    font-weight: bold;
+    .bolded;
     text-transform: uppercase;
     background: #2a2a2a;
     border-top: #000 solid 1px;
@@ -50,23 +68,23 @@ body {
   }
   
   div.basic-info table {
-    td:nth-child(2) { font-weight: bold; }
+    td:nth-child(2) { .bolded; }
   }
 
   div.recent-medications table td:first-child {
-    div:nth-child(1) { font-weight: bold; }
+    div:nth-child(1) { .bolded; }
     div:nth-child(2) { font-style: italic; }
   } 
 
   div.recent-conditions table td:first-child {
-    div:nth-child(1) { font-weight: bold; }
+    div:nth-child(1) { .bolded; }
     div:nth-child(2) { font-style: italic; }
   } 
 }
 
 header {
   overflow: auto;
-  .gradient(#f5f5f5, f5f5f5, #ececec);
+  .gradient(#f5f5f5, #f5f5f5, #ececec);
   border-top: #FFF solid 1px;
   border-bottom: #CCC solid 1px;
 
