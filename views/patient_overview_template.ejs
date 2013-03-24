@@ -1,45 +1,40 @@
-<div class="patient-profile">
-  <img src="images/profile.png">
-</div>
-<h2 class = "header basic">Patient Information</h2>
-<div class="list-containers">
-  <ul class = "categories">
-    <li>Name</li>
-    <li>Birthdate</li>
-    <li>Gender</li>
-    <li>MR</li>
-    <li>Acct No.</li>
-  </ul>
-  <ul class = "patient-info">
-    <li>John Doe</li>
-    <li>3/10/1960</li>
-    <li>Male</li>
-    <li>123456789</li>
-    <li>987654321</li>
-  </ul>
-</div>
-<h2 class = "header med">Recent Medication</h2>
-<div class="list-containers">
-  <ul class = "drugs">
-    <li>Cordarone 1mg</li>
-    <li class = "date">03/21/12</li>
-    <li>Zyprexa Zydis 2mg</li>
-    <li class = "date">02/12/12</li>
-    <li>Naproxen 2mg</li>
-    <li class = "date">02/21/13</li>
-  </ul>
-</div>
-<h2 class = "header cond">Recent Conditions</h2>
-<div class="list-containers">
-  <ul class = "conditions">
-    <li>Atrial Fibrillation</li>
-    <li class = "date">03/21/12</li>
-    <li>Diabetes, Type 1</li>
-    <li class = "date">05/12/12</li>
-    <li>Knee Surgery</li>
-    <li class = "date">02/21/13</li>
-  </ul>
-</div>
-<div class="button-container">
-  <button id = "profile" type = "submit">View Complete Profile</button>
+<div id="patient-overview">
+<div id="patient-overview">
+  <img class="photo" src="images/profile.png">
+  <div class="basic-info">
+    <h1 class="header basic">Patient Information</h2>
+    <table>
+      <tr><td>Name</td><td>John Doe</td></tr>
+      <tr><td>Birthdate</td><td>3/10/1960</td>
+      <tr><td>Gender</td><td>Male</td></tr>
+      <tr><td>MR</td><td>123456789</td></tr>
+      <tr><td>Acct No.</td><td>987654321</td></tr>
+    </table>
+  </div>
+  <div class="recent-medications">
+    <h1 class="header basic">Recent Medication</h2>
+    <table>
+      <tr>
+        <td><div>Tylenol</div><div>03/21/2013</div></td>
+        <td>2mg</td>
+      </tr>
+      <tr>
+        <td><div>Warfarin</div><div>02/01/2011</div></td>
+        <td>3mg</td>
+      </tr>
+      <tr>
+        <td><div>Aspirin</div><div>12/19/2010</div></td>
+        <td>1mg</td>
+      </tr>
+    </table>
+  </div>
+  <div class="recent-conditions">
+    <h1 class="header basic">Recent Conditions</h2>
+    <table>
+      <tr><td><div>Atrial Fibrillations</div><div>03/21/2012</div></td></tr>
+      <tr><td><div>Diabetes, Type 1</div><div>02/01/2011</div></td></tr>
+      <tr><td><div>Knee Surgery</div><div>12/19/2010</div></td></tr>
+    </table>
+  </div>
+  <button id="profile">View Complete Profile</button>
 </div>

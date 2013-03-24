@@ -10,18 +10,16 @@
 </head>
 <body>
   <script type="text/x-handlebars">
-    <div class="top-nav">
+    <header>
       <img src="images/logo.png"></img>
-      <div class="doctor-id">Welcome back, Dr. Lee.</div>
+      <div id="doctor-welcome">Welcome back, Dr. Lee.</div>
+    </header>
+    <div id="sidebar">
+      {{ outlet patient_view }}
     </div>
-    <div class="container-fluid"><div class="row-fluid">
-      <div class="span2 patient-view">
-        {{ outlet patient_view }}
-      </div>
-      <div class="span10 dose-adjustment">
-        {{ outlet }}
-      </div>
-    </div></div>
+    <div id="module" class="container-fluid">
+      {{ outlet }}
+    </div>
   </script>
 </body>
 </html>
