@@ -1,17 +1,3 @@
-<script type="text/x-handlebars" data-template-name="patient/index">
-  <div class="title">{{ title }}</div>
-  {{#linkTo patient.dosing}} Dosing {{/linkTo}}
-</script>
-
-
-<script type="text/x-handlebars" data-template-name="patient-sidebar">
-  <%= include patient_sidebar_template %>
-</script>
-
-<script type="text/x-handlebars" data-template-name="patient/dosing">
-  <%= include patient_dosing_template %>
-</script>
-
 <script type="text/x-handlebars" data-template-name="patient">
   <div id="sidebar">
     {{ outlet patient_view }}
@@ -20,3 +6,18 @@
     {{ outlet }}
   </div>
 </script>
+
+<script type="text/x-handlebars" data-template-name="patient/index">
+  <div class="title">Home</div>
+  {{#linkTo patient.dosing}} Dosing {{/linkTo}}
+</script>
+
+<script type="text/x-handlebars" data-template-name="patient/dosing">
+  <div class="title">Dose Adjustment</div>
+  <%= include patient_dosing_template %>
+</script>
+
+<script type="text/x-handlebars" data-template-name="patient-sidebar">
+  <%= include patient_sidebar_template %>
+</script>
+

@@ -42,11 +42,9 @@ GTCA.PatientRoute = Ember.Route.extend({
 });
 
 GTCA.PatientDosingController = Ember.ArrayController.extend({
-  title: 'Dose Adjustment'
 });
 
 GTCA.PatientIndexController = Ember.ObjectController.extend({
-  title: 'Home'
 });
 
 GTCA.ApplicationRoute = Ember.Route.extend({
