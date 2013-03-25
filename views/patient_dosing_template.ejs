@@ -1,7 +1,7 @@
 <div id="dosing">
   {{#each controller}}
-  <div class="overview container-fluid">
-    <div class="row-fluid">
+  <div class="drug container-fluid">
+    <div class="overview row-fluid">
       <div class="span6">
         <div class="name">Predicted Dose</div>
         <div class="value">{{ dosage }}</div>
@@ -11,6 +11,28 @@
         <div class="value">{{ typical_dosage }}</div>
       </div>
     </div>
+
+    <div class="factors row-fluid">
+      <div class="span12">
+        <table>
+          <tr>
+            <th>Genotype/Phenotype Factors</th>
+            <th>Effect on Prediction</th>
+            <th></th>
+          </tr>
+          {{#each factors}} 
+          <tr>
+            <td class="factor">
+              <div class="name">{{ name }}</div>
+              <div class="type">SNP</div>
+            </td>
+            <td class="effect">{{ effect }}</td>
+            <td class="learn_more"><span>Learn More</span></td>
+          </tr>
+          {{/each}}
+        </table>
+      </div>
+    </div>
+    {{/each}}
   </div>
-  {{/each}}
 </div>

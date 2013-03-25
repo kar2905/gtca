@@ -1,0 +1,93 @@
+#dosing {
+  background: #e6e6e6;
+  margin: 10px;
+  
+  div.drug {
+    padding: 20px;
+    color: #5a5a5a;
+  
+    div.overview {
+      text-align: center;
+
+      // predicted, typical dosage boxes
+      > div {
+        .drop-shadow(0, 0, 3px, 0.1);
+        border: 1px solid fade(#040404, 15%);
+        margin-bottom: 10px;
+
+        .name {
+          .bolded; 
+          padding: 25px 0;
+          font-size: 2em;
+          background: #f6f6f5;
+          border-bottom: 1px solid fade(black, 5%);
+        }
+
+        .value {
+          padding: 40px 0;
+          font-size: 3em;
+          background: white;
+        }
+      }
+    }  
+
+    div.factors {
+      .drop-shadow(0, 0, 3px, 0.1);
+      border: 1px solid fade(#040404, 15%);
+
+      table {
+        width: 100%;
+        
+        th {
+          background: #f6f6f5;
+          border-bottom: 1px solid fade(black, 5%);
+          .bolded;
+          padding: 15px;
+          text-align: center;
+
+          &:first-child {
+            text-align: left;
+          }
+        }
+
+        td {
+          padding: 15px;
+          background: white;
+
+          &.factor {
+            .name {
+              font-size: 1.05em;
+              .bolded;
+            }
+
+            .type {
+              font-size: 0.8em;
+            }
+          }
+
+          &.effect {
+            .bolded;
+            font-size: 1.1em; 
+            text-align: center;
+          }
+
+          &.learn_more { 
+            text-align: right;
+            span {
+              cursor: pointer;
+              .bolded;  
+              text-transform: uppercase;
+              font-size: 0.8em; 
+              background: #676767;
+              padding: 7px 15px;
+              color: white;
+              .rounded(3px);
+              border-top: 1px solid fade(white, 35%);
+              .box-shadow(0 -1px 1px #676767);
+            }
+          }
+        }
+      }
+    }
+  }
+} 

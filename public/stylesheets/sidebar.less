@@ -1,0 +1,55 @@
+#sidebar #patient-overview {
+  width: @sidebar-width;
+  position: fixed;
+  height: 100%;
+  color: white;
+  background-color: #3d3d3d;
+  border-right: 1px solid fade(black, 30%);
+  
+
+  img.photo {
+    display: block;
+
+    @margin: 15px;
+    margin: @margin auto;
+    width: @sidebar-width - 2*@margin;
+
+    border: 1px solid #4e4e4e;
+  }
+
+  h1 {
+    line-height: 1em;
+    margin: 0;
+    font-size: 1em;
+    padding: 10px 15px;
+
+    .bolded;
+    text-transform: uppercase;
+    background: #2a2a2a;
+    border-top: #000 solid 1px;
+    border-bottom: rgba(255, 255, 255, 0.2) solid 1px;
+  }
+
+  table {
+    color: #f6f6f6;
+    text-shadow: 0 -1px 0 #000;
+    width: 100%;
+    border-spacing: 15px 5px;
+    border-collapse: separate;
+    padding: 5px 0;
+  }
+  
+  div.basic-info table {
+    td:nth-child(2) { .bolded; }
+  }
+
+  div.recent-medication table td:first-child {
+    div:nth-child(1) { .bolded; }
+    div:nth-child(2) { font-style: italic; }
+  } 
+
+  div.recent-conditions table td:first-child {
+    div:nth-child(1) { .bolded; }
+    div:nth-child(2) { font-style: italic; }
+  } 
+}
