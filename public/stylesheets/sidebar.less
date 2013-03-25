@@ -25,7 +25,9 @@
 
     .bolded;
     text-transform: uppercase;
-    background: #2a2a2a;
+    background-color: #2a2a2a;
+    background-repeat: no-repeat;
+    background-position: 95% center;
     border-top: #000 solid 1px;
     border-bottom: rgba(255, 255, 255, 0.2) solid 1px;
   }
@@ -39,17 +41,24 @@
     padding: 5px 0;
   }
   
-  div.basic-info table {
-    td:nth-child(2) { .bolded; }
+  div.basic-info { 
+    h1 { background-image: url(/images/basic.png) }
+    table { td:nth-child(2) { .bolded; } }
   }
 
-  div.recent-medication table td:first-child {
-    div:nth-child(1) { .bolded; }
-    div:nth-child(2) { font-style: italic; }
+  div.recent-medication {
+    h1 { background-image: url(/images/med.png) }
+    table td:first-child {
+      div:nth-child(1) { .bolded; }
+      div:nth-child(2) { font-style: italic; }
+    }
   } 
 
-  div.recent-conditions table td:first-child {
-    div:nth-child(1) { .bolded; }
-    div:nth-child(2) { font-style: italic; }
+  div.recent-conditions { 
+    h1 { background-image: url(/images/cond.png) }
+    table td:first-child {
+      div:nth-child(1) { .bolded; }
+      div:nth-child(2) { font-style: italic; }
+    }
   } 
 }
