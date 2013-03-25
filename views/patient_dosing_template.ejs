@@ -23,9 +23,9 @@
           </tr>
           {{#each factors}} 
           <tr>
-            <td class="factor">
+            <td {{bindAttr class=":factor type"}}>
               <div class="name">{{ name }}</div>
-              <div class="type">SNP</div>
+              <div class="type">{{ type }}</div>
             </td>
             <td class="effect">{{ effect }}</td>
             <td class="learn_more"><span>Learn More</span></td>

@@ -54,10 +54,19 @@
         }
 
         td {
-          padding: 15px;
-          background: white;
+          padding: 12px 15px;
+          background-color: white;
 
           &.factor {
+            padding-left: 60px;
+            background-repeat: no-repeat;
+            background-position: 17px center;
+            background-size: auto 45%;
+
+            &.SNP { background-image: url(/images/snp.png); }
+            &.Condition { background-image: url(/images/condition.png); }
+            &.Ethnicity { background-image: url(/images/ethnicity.png); }
+
             .name {
               font-size: 1.05em;
               .bolded;
@@ -65,6 +74,7 @@
 
             .type {
               font-size: 0.8em;
+              line-height: 1em;
             }
           }
 
