@@ -1,5 +1,7 @@
 <div id="dosing">
-  {{#each controller}}
+  {{view Bootstrap.Tabs itemTitleKey="title" contentBinding="content" selectionBinding="selection"}}
+
+  {{#with selection }}
   <div class="drug container-fluid">
     <div class="overview row-fluid">
       <div class="span6">
@@ -33,5 +35,5 @@
       </div>
     </div>
   </div>
-  {{/each}}
+  {{/with}}
 </div>

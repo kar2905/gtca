@@ -16,15 +16,28 @@ GTCA.IndexRoute = Ember.Route.extend({
 
 GTCA.PatientDosingRoute = Ember.Route.extend({
   model: function() {
-    return [ {
+    return [ 
+    { 
+      title: 'Warfarin',
       dosage: '2mg',
       typical_dosage: '1mg',
       factors: [
         { name: 'CYP2C9', effect: 0.5 },
         { name: 'Asian', effect: -0.2 },
-        { name: 'Heart Surgery', effect: 0.3 }
+        { name: 'Heart Surgery', effect: 0.3 },
       ]
-    } ];
+    },
+    {
+      title: 'Tylenol',
+      dosage: '3mg',
+      typical_dosage: '4mg',
+      factors: [
+        { name: 'Asian', effect: -0.2 },
+        { name: 'Heart Surgery', effect: 0.3 },
+        { name: 'CYP2C9', effect: 0.5 },
+      ]
+    }
+    ];
   }
 });
 
