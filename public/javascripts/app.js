@@ -10,13 +10,21 @@ GTCA.Router.map(function() {
 
 GTCA.IndexRoute = Ember.Route.extend({
   redirect: function() {
-    this.transitionTo('patient', { id: 1 });
+    this.transitionTo('patient', { id: 'huAC827A' });
   }
 });
 
 GTCA.PatientDosingRoute = Ember.Route.extend({
   model: function() {
-    return [];
+    return [ {
+      dosage: '2mg',
+      typical_dosage: '1mg',
+      factors: [
+        { name: 'CYP2C9', effect: 0.5 },
+        { name: 'Asian', effect: -0.2 },
+        { name: 'Heart Surgery', effect: 0.3 }
+      ]
+    } ];
   }
 });
 
@@ -30,7 +38,7 @@ GTCA.PatientRoute = Ember.Route.extend({
   },
   model: function(params) {
     return {
-      id: 1,
+      id: 'huAC827A',
       first_name: 'George',
       last_name: 'Clooney',
       birth_date: '3/10/1960',
