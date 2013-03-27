@@ -31,8 +31,8 @@ GTCA.PatientRoute = Ember.Route.extend({
   model: function(params) {
     return {
       id: 'huAC827A',
-      first_name: 'George',
-      last_name: 'Clooney',
+      first_name: 'John',
+      last_name: 'Dou',
       birth_date: '3/10/1960',
       gender: 'Male',
       mr_id: 123213,
