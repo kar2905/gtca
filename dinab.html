@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head> 
+  <title>Doctor-in-a-Box</title>
+  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+  <link rel="stylesheet" type="text/css" href="style.css" media="all">
+  <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.no-icons.min.css" rel="stylesheet"> 
+  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script>
+  <script src="http://carlk.pc.cs.cmu.edu/gattaca/dev/drugprescription/js/gattaca.js"></script>
+  <script src="dinab.js"></script>
+</head>
+<body>
+	<div class="top-nav">
+    <img src="images/logo.png"></img>
+		<div class="doctor-id">
+			<h4>Welcome back, Dr. Lee.</h4>
+		</div>
+	</div>
+  <div class="container-fluid">
+  <div class="row-fluid">
+    <div class="span2 patient-view">
+    <div class="patient-profile">
+	  	<img src="images/profile.png">
+  	</div>
+      <h2 class = "header basic">Patient Information</h2>
+      <div class="list-containers">
+	      <ul class = "categories">
+	        <li>Name</li>
+	        <li>Birthdate</li>
+	        <li>Gender</li>
+	        <li>MR</li>
+	        <li>Acct No.</li>
+	      </ul>
+	      <ul class = "patient-info">
+	        <li>John Doe</li>
+	        <li>3/10/1960</li>
+	        <li>Male</li>
+	        <li>123456789</li>
+	        <li>987654321</li>
+	      </ul>
+      </div>
+      <h2 class = "header med">Recent Medication</h2>
+      <div class="list-containers">
+	      <ul class = "drugs">
+	        <li>Cordarone 1mg</li>
+	        <li class = "date">03/21/12</li>
+	        <li>Zyprexa Zydis 2mg</li>
+	        <li class = "date">02/12/12</li>
+	        <li>Naproxen 2mg</li>
+	        <li class = "date">02/21/13</li>
+	      </ul>
+      </div>
+      <h2 class = "header cond">Recent Conditions</h2>
+      <div class="list-containers">
+	      <ul class = "conditions">
+	        <li>Atrial Fibrillation</li>
+	        <li class = "date">03/21/12</li>
+	        <li>Diabetes, Type 1</li>
+	        <li class = "date">05/12/12</li>
+	        <li>Knee Surgery</li>
+	        <li class = "date">02/21/13</li>
+	      </ul>
+      </div>
+      <div class="button-container">
+      	<button id = "profile" type = "submit">View Complete Profile</button>
+      </div>
+  	</div>
+    <div class="span10 dose-adjustment">
+
+        <div class = "condition">
+            <input id = "search" type="text" name="condition" title="Condition" style="color:#888;" 
+            value="Enter a Condition" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+        <button id = "confirm" type = "submit">Confirm</button>
+        </div>
+
+       
+
+        <div class = "drug-content">
+            <div id="dialog" title="Calculate Dose">
+                <form>
+              <fieldset class="ui-helper-reset">
+                      <!--<label for="search2">Search: </label>
+                    <input id="search2" />-->
+                    <input id = "search2" type="text" name="drug" title="drug" style="color:#888;" 
+                    value="Enter a Drug" onfocus="inputFocus(this)" onblur="inputBlur(this)" />
+              </fieldset>
+                </form>
+            </div>
+
+           
+     
+            <div id="tabs">
+                <ul>
+                    <!--<li><a href="#tabs-1">Warfarin</a> <span class="ui-icon ui-icon-close" role="presentation">Remove Tab</span></li>-->
+                    <button id="add_tab">+</button>
+                </ul>
+                <div id="tabs-1"> </div>
+            </div>
+
+        </div>
+        
+        
+        
+        <div id="content">
+            <div id="dose">
+            	John Doe should take<br>
+                2mg
+            </div>
+            
+            <div id="avg-dose">
+            	Avg. Dose
+                without genetic info
+            </div>
+            
+            <br><br><br>
+            
+            <table id="factors-table">
+                <tr>
+                    <td>Genotype/Phenotype Factors</td>
+                    <td>Importance in Prediction</td>
+                </tr>
+                <tr>
+                    <td><img src=""></td>
+                    <td>CYP2C9*2</td>
+                    <td>UP</td>
+                    <td><button type="submit" onClick="openLearnMore(1)">LEARN MORE</button></td>
+                </tr>
+                <tr>
+                    <td><img src=""></td>
+                    <td>VKORC11639/3673AA</td>
+                    <td>UP</td>
+                    <td><button type="submit" onClick="openLearnMore(2)">LEARN MORE</button></td>
+                </tr>
+                <tr>
+                    <td><img src=""></td>
+                    <td>Asian</td>
+                    <td>DOWN</td>
+                    <td><button type="submit" onClick="openLearnMore(3)">LEARN MORE</button></td>
+                </tr>                    <tr>
+                    <td><img src=""></td>
+                    <td>Heart Surgery</td>
+                    <td>DOWN</td>
+                    <td><button type="submit" onClick="openLearnMore(4)">LEARN MORE</button></td>
+                </tr>
+            </table>   
+        </div>
+        
+   
+  
+    </div>
+    
+    
+    <div id="learn-more">
+        <div id="factor1">
+        	<!-- include this div if the factor is a SNP-->
+        	<div id="snp-data-desc">
+                <h4>Description of SNP Data</h4>
+                <ul>
+                    <li>Level of Evidence - <a href="http://www.pharmgkb.org/page/clinAnnLevels">PharmGKB's Clinical Annotation Levels of Evidence</a></li>
+                    <li>OMB Race - Race in which the mutation is prevalent or whidely reported (PharmGKB)</li>
+                    <li>Mutant - disease genotype where the first letter is the wildtype and the second letter is the mutation</li>
+                    <li>Function - the kind of mutation</li>
+                </ul>    
+            </div>
+            
+            <!-- include this div if there are relevant publications-->
+        	<div id="publication-desc">
+                <h4>Description of Publication Parameters</h4>
+                <ul>
+                    <li>Frequency - (float between 0.0 and 1.0), frequency of the mutant allele in a given population</li>
+                    <li>p-value - from an algorithm used to derive the association between this SNP and altered drug response</li>
+                    <li>Dose - effect on drug dose that the presence of a mutant allele has</li>
+                    <li>Population - type of population this study was done on</li>
+                </ul>    
+            </div>
+        </div>
+    </div>   
+    
+  </div></div>
+</body>
+</html>

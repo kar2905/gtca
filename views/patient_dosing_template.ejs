@@ -34,6 +34,82 @@
         </table>
       </div>
     </div>
+	
+	
+	<div class="learn-more">
+	  <h1>SNP: CYP2Y9</h1>
+	  <table class="snp-data">
+	    <tr><td class="param">Level of Evidence</td><td>1A</td></tr>
+		<tr><td class="param">OMB Race</td><td>White</td></tr>
+		<tr><td class="param">Mutant</td><td>CT</td></tr>
+		<tr><td class="param">Function</td><td>Missense (Val -> Met)</td></tr>
+		<tr><td class="param">URL to dbSNP's page</td><td><a href='http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=2108622'>http://www.ncbi.nlm.nih.gov/projects/SNP/snp_ref.cgi?rs=2108622</a></td></tr>
+      </table>
+	  
+	  <!-- include this div if the factor is a SNP-->
+	  <div id="snp-data-desc">
+	    <h4>Description of SNP Data</h4>
+	    <ul>
+		  <li><span>Level of Evidence</span> - <a href="http://www.pharmgkb.org/page/clinAnnLevels">PharmGKB's Clinical Annotation Levels of Evidence</a></li>
+		  <li><span>OMB Race</span> - Race in which the mutation is prevalent or whidely reported (PharmGKB)</li>
+		  <li><span>Mutant</span> - disease genotype where the first letter is the wildtype and the second letter is the mutation</li>
+		  <li><span>Function</span> - the kind of mutation</li>
+	    </ul>
+	  </div>
+	
+	  <!-- include if there are relevant publications-->
+      <h3>Publications</h3>
+	  
+	  <h4>Publication #1: <a href='http://www.ncbi.nlm.nih.gov/pubmed?term=18305455'>http://www.ncbi.nlm.nih.gov/pubmed?term=18305455</a></h4>
+	  <table class="publication-data">
+	    <tr>
+		  <th>Frequency</th>
+		  <th>P-value</th>
+		  <th>Dose</th>
+		  <th>Population Size</th>
+		  <th>Population</th>
+		</tr>
+		<tr>
+		  <td>0.4</td>
+		  <td>0.05</td>
+		  <td>Lower dosage</td>
+		  <td>1,000 participants</td>
+		  <td>White/Caucasian</td>
+		</tr>
+
+	  </table>
+	  
+	  <h4>Publication #2: <a href='http://www.ncbi.nlm.nih.gov/pubmed/?term=143242'>http://www.ncbi.nlm.nih.gov/pubmed/?term=143242</a></h4>
+	  <table class="publication-data">
+	    <tr>
+		  <th>Frequency</th>
+		  <th>P-value</th>
+		  <th>Dose</th>
+		  <th>Population Size</th>
+		  <th>Population</th>
+		</tr>
+		<tr>
+		  <td>0.9</td>
+		  <td>0.01</td>
+		  <td>Increase dosage</td>
+		  <td>532 participants</td>
+		  <td>Hispanic</td>
+		</tr>
+
+	  </table>
+	  
+	  <div id="publication-desc">
+		<h4>Description of Publication Parameters</h4>
+		<ul>
+		  <li><span>Frequency</span> - (float between 0.0 and 1.0), frequency of the mutant allele in a given population</li>
+		  <li><span>p-value</span> - from an algorithm used to derive the association between this SNP and altered drug response</li>
+		  <li><span>Dose</span> - effect on drug dose that the presence of a mutant allele has</li>
+		  <li><span>Population</span> - type of population this study was done on</li>
+		</ul>    
+	  </div>
+	  
+	</div>
+	
   </div>
   {{/with}}
 </div>
