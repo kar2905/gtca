@@ -85,7 +85,7 @@ GTCA.PatientDosingController = Ember.ArrayController.extend({
       case '':
         break;
       default:
-        alert('Bad drug'); 
+        alert('Bad drug: only Warfarin and Heparin currently supported'); 
     }
     this.set('drug', "");
     this.set('selection', this.get('lastObject'));
