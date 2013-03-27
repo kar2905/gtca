@@ -1,5 +1,7 @@
 <div id="dosing">
-  {{view GTCA.DrugTextField placeholder="Add drug..." valueBinding="drug"}}
+  <div class="input-container">
+  {{view GTCA.DrugTextField placeholder="ENTER DRUG NAME..." valueBinding="drug"}}
+  </div>
   {{view Bootstrap.Tabs itemTitleKey="title" contentBinding="content" selectionBinding="selection"}}
 
   {{#with selection }}
