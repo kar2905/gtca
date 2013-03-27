@@ -1,0 +1,46 @@
+#dashboard {
+  background: #e6e6e6;
+  margin: 10px;
+  
+  // reset bootstrap tab formatting
+  ul { margin-bottom: 0; }
+  
+  div.dash {
+    padding: 20px;
+    color: #5a5a5a;
+  
+    div.overview2 {
+      text-align: center;
+
+      // predicted, typical dosage boxes
+      > div {
+        .drop-shadow(0, 0, 3px, 0.1);
+        border: 1px solid fade(#040404, 15%);
+        margin-bottom: 10px;
+
+        .name2 {
+          padding: 20px 0 15px 0;
+          background: #f6f6f5;
+          border-bottom: 1px solid fade(black, 5%);
+          
+          .large {
+	          font-size: 2em;
+	          .bolded; 
+          }
+          
+          .small {
+	          font-size: 1em;
+	          margin-top: 10px;
+          }
+          
+        }
+
+        .value2 {
+          padding: 40px 0;
+          font-size: 3em;
+          background: white;
+        }
+      }
+    }
+  }  
+} 
