@@ -48,9 +48,17 @@ GTCA.DrugTextField = Ember.TextField.extend({
 });
 
 GTCA.PatientDosingController = Ember.ArrayController.extend({
+  init: function() {
+    this.set('condition', "");
+  },
+
+  condition_specified: function() {
+    return this.get('condition') != "";
+  }.property('condition'),
+
   add_drug: function() { 
-    switch(this.get('drug')) {
-      case 'Warfarin':
+    switch(this.get('drug').toLowerCase()) {
+      case 'warfarin':
         this.addObject({ 
           title: 'Warfarin',
           dosage: '2mg',
@@ -62,7 +70,7 @@ GTCA.PatientDosingController = Ember.ArrayController.extend({
           ]
         });
         break;
-      case 'Heparin':
+      case 'heparin':
         this.addObject({
           title: 'Heparin',
           dosage: '3mg',
