@@ -62,9 +62,9 @@ GTCA.PatientDosingController = Ember.ArrayController.extend({
           ]
         });
         break;
-      case 'Tylenol':
+      case 'Heparin':
         this.addObject({
-          title: 'Tylenol',
+          title: 'Heparin',
           dosage: '3mg',
           typical_dosage: '4mg',
           factors: [
