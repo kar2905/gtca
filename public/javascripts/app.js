@@ -16,28 +16,7 @@ GTCA.IndexRoute = Ember.Route.extend({
 
 GTCA.PatientDosingRoute = Ember.Route.extend({
   model: function() {
-    return [ 
-    { 
-      title: 'Warfarin',
-      dosage: '2mg',
-      typical_dosage: '1mg',
-      factors: [
-        { name: 'CYP2C9', type: 'SNP', effect: 0.5 },
-        { name: 'Asian', type: 'Ethnicity', effect: -0.2 },
-        { name: 'Heart Surgery', type: 'Condition', effect: 0.3 },
-      ]
-    },
-    {
-      title: 'Tylenol',
-      dosage: '3mg',
-      typical_dosage: '4mg',
-      factors: [
-        { name: 'Asian', type: 'Ethnicity', effect: -0.2 },
-        { name: 'Heart Surgery', type: 'Condition', effect: 0.3 },
-        { name: 'CYP2C9', type: 'SNP', effect: 0.5 },
-      ]
-    }
-    ];
+    return [];
   }
 });
 
@@ -62,7 +41,47 @@ GTCA.PatientRoute = Ember.Route.extend({
   }
 });
 
+GTCA.DrugTextField = Ember.TextField.extend({
+  insertNewline: function() {
+    this.get('controller').send('add_drug');
+  }
+});
+
 GTCA.PatientDosingController = Ember.ArrayController.extend({
+  add_drug: function() { 
+    switch(this.get('drug')) {
+      case 'Warfarin':
+        this.addObject({ 
+          title: 'Warfarin',
+          dosage: '2mg',
+          typical_dosage: '1mg',
+          factors: [
+            { name: 'CYP2C9', type: 'SNP', effect: 0.5 },
+            { name: 'Asian', type: 'Ethnicity', effect: -0.2 },
+            { name: 'Heart Surgery', type: 'Condition', effect: 0.3 },
+          ]
+        });
+        break;
+      case 'Tylenol':
+        this.addObject({
+          title: 'Tylenol',
+          dosage: '3mg',
+          typical_dosage: '4mg',
+          factors: [
+            { name: 'Asian', type: 'Ethnicity', effect: -0.2 },
+            { name: 'Heart Surgery', type: 'Condition', effect: 0.3 },
+            { name: 'CYP2C9', type: 'SNP', effect: 0.5 },
+          ]
+        });
+        break;
+      case '':
+        break;
+      default:
+        alert('Bad drug'); 
+    }
+    this.set('drug', "");
+    this.set('selection', this.get('lastObject'));
+  }
 });
 
 GTCA.PatientIndexController = Ember.ObjectController.extend({
