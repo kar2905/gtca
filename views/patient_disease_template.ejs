@@ -1,0 +1,59 @@
+<div id="dosing">
+  {{view GTCA.DrugTextField placeholder="Enter condition to prescribe for..."
+                            class="condition"
+                            valueBinding="condition"}}
+
+  {{#if condition_specified }}
+    {{view GTCA.DrugTextField placeholder="Add drug..."
+                              class="drug"
+                              valueBinding="drug"}}
+
+    <div class="results">
+      {{view Bootstrap.Tabs itemTitleKey="title"
+                            contentBinding="content"
+                            selectionBinding="selection"}}
+      
+      {{#with selection }}
+      <div class="drug container-fluid">
+        <div class="overview row-fluid">
+          <div class="span6">
+            <div class="name">
+              <div class="large">John Dou</div>
+              <div class="small">should take</div>
+            </div>
+            <div class="value">{{ dosage }}</div>
+          </div>
+          <div class="span6">
+            <div class="name">
+              <div class="large">Typical Dosage</div>
+              <div class="small">without genetic information</div>
+            </div>
+            <div class="value">{{ typical_dosage }}</div>
+          </div>
+        </div>
+        <div class="factors row-fluid">
+          <div class="span12">
+            <table>
+              <tr>
+                <th>Genotype/Phenotype Factors</th>
+                <th>Effect on Prediction</th>
+                <th></th>
+              </tr>
+              {{#each factors}} 
+              <tr>
+                <td {{bindAttr class=":factor type"}}>
+                  <div class="name">{{ name }}</div>
+                  <div class="type">{{ type }}</div>
+                </td>
+                <td class="effect">{{ effect }}</td>
+                <td class="learn_more"><span>Learn More</span></td>
+              </tr>
+              {{/each}}
+            </table>
+          </div>
+        </div>
+      </div>
+      {{/with}}
+    </div>
+  {{/if}} 
+</div>
