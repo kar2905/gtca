@@ -36,7 +36,7 @@
             <table>
               <tr>
                 <th>Genotype/Phenotype Factors</th>
-                <th>Effect on Prediction</th>
+                <th>Effect on Dosage</th>
                 <th></th>
               </tr>
               {{#each factors}} 
@@ -45,7 +45,7 @@
                   <div class="name">{{ name }}</div>
                   <div class="type">{{ type }}</div>
                 </td>
-                <td class="effect">{{ effect }}</td>
+                <td class="effect"><span class="increase">{{ effect }}</span></td>
                 <td class="learn_more"><span>Learn More</span></td>
               </tr>
               {{/each}}

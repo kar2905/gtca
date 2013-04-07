@@ -110,7 +110,7 @@
             background-position: 17px center;
             background-size: auto 45%;
 
-            &.SNP { background-image: url(/images/snp.png); }
+            &.Variant { background-image: url(/images/snp.png); }
             &.Condition { background-image: url(/images/condition.png); }
             &.Ethnicity { background-image: url(/images/ethnicity.png); }
 
@@ -129,6 +129,22 @@
             .bolded;
             font-size: 1.1em; 
             text-align: center;
+            
+            span {
+	            background-repeat: no-repeat;
+	            background-position: -30px auto;
+	            padding-left: 20px;
+		        
+		        &.increase {
+			        background-image: url(/images/increase.png);  
+		        }
+		          
+		        &.decrease {
+			        background-image: url(/images/decrease.png);  
+		        }
+		        
+            }
+            
           }
 
           &.learn_more { 

@@ -64,7 +64,8 @@ GTCA.PatientDosingController = Ember.ArrayController.extend({
           dosage: '2mg',
           typical_dosage: '1mg',
           factors: [
-            { name: 'CYP2C9', type: 'SNP', effect: 0.5 },
+            { name: 'CYP2C9*2', type: 'Variant', effect: 0.5 },
+            { name: 'CYP2C9*3', type: 'Variant', effect: 0.5 },
             { name: 'Asian', type: 'Ethnicity', effect: -0.2 },
             { name: 'Heart Surgery', type: 'Condition', effect: 0.3 },
           ]
@@ -78,7 +79,7 @@ GTCA.PatientDosingController = Ember.ArrayController.extend({
           factors: [
             { name: 'Asian', type: 'Ethnicity', effect: -0.2 },
             { name: 'Heart Surgery', type: 'Condition', effect: 0.3 },
-            { name: 'CYP2C9', type: 'SNP', effect: 0.5 },
+            { name: 'CYP2C9*2', type: 'SNP', effect: 0.5 },
           ]
         });
         break;
