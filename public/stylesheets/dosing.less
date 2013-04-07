@@ -6,6 +6,10 @@
   .nav-tabs > :not(.active) > a {
     background: #ccc;
   }
+  
+  .tab_title {
+	  text-transform: uppercase;
+  }
 
   input {
     box-sizing: border-box;
@@ -41,7 +45,69 @@
     background: #e6e6e6;
     padding: 20px;
     color: #5a5a5a;
-  
+    
+    div.session_title {
+    	margin-top: 10px;
+        margin-bottom: 25px;
+        text-align: left;
+        clear: both;
+        
+        .medication_title {
+	        font-size: 1.6em;
+	        .bolded;
+        }
+        
+        .label_title {
+	        font-size: 1em;
+	        margin-bottom: 3px;
+        }
+        
+        .buttons {
+	        float: right;
+	        cursor: pointer;
+	        
+	        .save {
+		        width: 45px;
+		        height: 40px;
+		        background: #f6f6f5;
+		        display: inline-block;
+		        border: 1px solid fade(#040404, 25%);
+		        .drop-shadow(0, 0, 3px, 0.1);
+		        margin-right: -4px;
+		        background-image: url(/images/save.png);
+		        background-position: 10px 10px;
+		        background-repeat: no-repeat;
+	        }
+	        
+	        .save:hover {
+		        background: white;
+		        background-image: url(/images/save.png);
+		        background-position: 10px 10px;
+		        background-repeat: no-repeat;
+	        }
+	        
+	        .print {
+		        width: 45px;
+		        height: 40px;
+		        background: #f6f6f5;
+		        display: inline-block;
+		        border: 1px solid fade(#040404, 25%);
+		        .drop-shadow(0, 0, 3px, 0.1);
+		        background-image: url(/images/print.png);
+		        background-position: 10px 10px;
+		        background-repeat: no-repeat;
+		        
+	        }
+	        
+	        .print:hover {
+		        background: white;
+		        background-image: url(/images/print.png);
+		        background-position: 10px 10px;
+		        background-repeat: no-repeat;
+	        }
+        }
+    }
+    
     div.overview {
       text-align: center;
 
@@ -50,7 +116,7 @@
         .drop-shadow(0, 0, 3px, 0.1);
         border: 1px solid fade(#040404, 15%);
         margin-bottom: 10px;
-
+        
         .name {
           padding: 20px 0 15px 0;
           background: #f6f6f5;
