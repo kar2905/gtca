@@ -77,7 +77,7 @@ GTCA.DosingIndexController = Ember.ArrayController.extend({
           factors: [
             { name: 'Asian', type: 'Ethnicity', effect: -0.2 },
             { name: 'Heart Surgery', type: 'Condition', effect: 0.3 },
-            { name: 'CYP2C9*2', type: 'SNP', effect: 0.5 },
+            { name: 'CYP2C9*2', type: 'Variant', effect: 0.5 },
           ]
         });
         break;
