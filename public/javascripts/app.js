@@ -1,10 +1,10 @@
 GTCA = Ember.Application.create();
-GTCA.ApplicationController = Ember.Controller.extend({
-});
 
 GTCA.Router.map(function() {
   this.resource('patient', { path: '/patient/:patient_id' }, function() {
-    this.route("dosing");
+    this.resource('dosing', function() {
+      this.route('learn_more');
+    });
   });
 });
 
@@ -14,7 +14,7 @@ GTCA.IndexRoute = Ember.Route.extend({
   }
 });
 
-GTCA.PatientDosingRoute = Ember.Route.extend({
+GTCA.DosingIndexRoute = Ember.Route.extend({
   model: function() {
     return [];
   }
@@ -47,10 +47,8 @@ GTCA.DrugTextField = Ember.TextField.extend({
   }
 });
 
-GTCA.PatientDosingController = Ember.ArrayController.extend({
-  init: function() {
-    this.set('condition', "");
-  },
+GTCA.DosingIndexController = Ember.ArrayController.extend({
+  condition: "",
 
   condition_specified: function() {
     return this.get('condition') != "";
@@ -91,10 +89,4 @@ GTCA.PatientDosingController = Ember.ArrayController.extend({
     this.set('drug', "");
     this.set('selection', this.get('lastObject'));
   }
-});
-
-GTCA.PatientIndexController = Ember.ObjectController.extend({
-});
-
-GTCA.ApplicationRoute = Ember.Route.extend({
 });
