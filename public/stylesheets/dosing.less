@@ -6,6 +6,10 @@
   .nav-tabs > :not(.active) > a {
     background: #ccc;
   }
+  
+  .tab_title {
+	  text-transform: uppercase;
+  }
 
   input {
     box-sizing: border-box;
@@ -41,7 +45,24 @@
     background: #e6e6e6;
     padding: 20px;
     color: #5a5a5a;
-  
+    
+    div.session_title {
+        margin-bottom: 25px;
+        text-align: center;
+        clear: both;
+        
+        .medication_title {
+	        font-size: 1.6em;
+	        .bolded;
+        }
+        
+        .label_title {
+	        font-size: 1em;
+	        margin-bottom: 3px;
+        }
+        
+    }
+    
     div.overview {
       text-align: center;
 
@@ -50,7 +71,7 @@
         .drop-shadow(0, 0, 3px, 0.1);
         border: 1px solid fade(#040404, 15%);
         margin-bottom: 10px;
-
+        
         .name {
           padding: 20px 0 15px 0;
           background: #f6f6f5;
@@ -89,16 +110,23 @@
         }
         
         th {
-          background: #f6f6f5;
           .bolded;
+          background: #f6f6f5;
           padding: 15px;
           text-align: center;
           white-space: nowrap;
+          font-size: 1.1em;
 
           &:first-child {
             text-align: left;
           }
+
+          .small{
+            font-size: 0.8em;
+          }
         }
+
+        
 
         td {
           padding: 12px 15px;
@@ -110,7 +138,7 @@
             background-position: 17px center;
             background-size: auto 45%;
 
-            &.SNP { background-image: url(/images/snp.png); }
+            &.Variant { background-image: url(/images/snp.png); }
             &.Condition { background-image: url(/images/condition.png); }
             &.Ethnicity { background-image: url(/images/ethnicity.png); }
 
@@ -129,6 +157,22 @@
             .bolded;
             font-size: 1.1em; 
             text-align: center;
+            
+            span {
+	            background-repeat: no-repeat;
+	            background-position: -30px auto;
+	            padding-left: 20px;
+		        
+		        &.increase {
+			        background-image: url(/images/increase.png);  
+		        }
+		          
+		        &.decrease {
+			        background-image: url(/images/decrease.png);  
+		        }
+		        
+            }
+            
           }
 
           &.learn_more { 

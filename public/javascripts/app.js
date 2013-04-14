@@ -1,10 +1,11 @@
 GTCA = Ember.Application.create();
-GTCA.ApplicationController = Ember.Controller.extend({
-});
 
 GTCA.Router.map(function() {
   this.resource('patient', { path: '/patient/:patient_id' }, function() {
-    this.route("dosing");
+
+    this.resource('dosing', function() {
+      this.route('learn_more');
+    });
     this.route("disease");
   });
 });
@@ -15,7 +16,7 @@ GTCA.IndexRoute = Ember.Route.extend({
   }
 });
 
-GTCA.PatientDosingRoute = Ember.Route.extend({
+GTCA.DosingIndexRoute = Ember.Route.extend({
   model: function() {
     return [];
   }
@@ -48,10 +49,8 @@ GTCA.DrugTextField = Ember.TextField.extend({
   }
 });
 
-GTCA.PatientDosingController = Ember.ArrayController.extend({
-  init: function() {
-    this.set('condition', "");
-  },
+GTCA.DosingIndexController = Ember.ArrayController.extend({
+  condition: "",
 
   condition_specified: function() {
     return this.get('condition') != "";
@@ -65,7 +64,8 @@ GTCA.PatientDosingController = Ember.ArrayController.extend({
           dosage: '2mg',
           typical_dosage: '1mg',
           factors: [
-            { name: 'CYP2C9', type: 'SNP', effect: 0.5 },
+            { name: 'CYP2C9*2', type: 'Variant', effect: 0.5 },
+            { name: 'CYP2C9*3', type: 'Variant', effect: 0.5 },
             { name: 'Asian', type: 'Ethnicity', effect: -0.2 },
             { name: 'Heart Surgery', type: 'Condition', effect: 0.3 },
           ]
@@ -79,7 +79,7 @@ GTCA.PatientDosingController = Ember.ArrayController.extend({
           factors: [
             { name: 'Asian', type: 'Ethnicity', effect: -0.2 },
             { name: 'Heart Surgery', type: 'Condition', effect: 0.3 },
-            { name: 'CYP2C9', type: 'SNP', effect: 0.5 },
+            { name: 'CYP2C9*2', type: 'Variant', effect: 0.5 },
           ]
         });
         break;
@@ -91,10 +91,4 @@ GTCA.PatientDosingController = Ember.ArrayController.extend({
     this.set('drug', "");
     this.set('selection', this.get('lastObject'));
   }
-});
-
-GTCA.PatientIndexController = Ember.ObjectController.extend({
-});
-
-GTCA.ApplicationRoute = Ember.Route.extend({
 });

@@ -11,10 +11,14 @@
     <div class="results">
       {{view Bootstrap.Tabs itemTitleKey="title"
                             contentBinding="content"
-                            selectionBinding="selection"}}
-      
+                            selectionBinding="selection" class="tab_title"}}
+
       {{#with selection }}
       <div class="drug container-fluid">
+        <div class="session_title">
+          <div class="label_title">MEDICATION - CONDITION(S)</div>
+          <div class="medication_title">Warfarin - Atrial Fibrillation</div>
+        </div>
         <div class="overview row-fluid">
           <div class="span6">
             <div class="name">
@@ -35,8 +39,8 @@
           <div class="span12">
             <table>
               <tr>
-                <th>Genotype/Phenotype Factors</th>
-                <th>Effect on Prediction</th>
+                <th>Patient has the following factors</th>
+                <th>Effect on Dosage</th>
                 <th></th>
               </tr>
               {{#each factors}} 
@@ -45,7 +49,7 @@
                   <div class="name">{{ name }}</div>
                   <div class="type">{{ type }}</div>
                 </td>
-                <td class="effect">{{ effect }}</td>
+                <td class="effect"><span class="increase">{{ effect }}</span></td>
                 <td class="learn_more"><span>Learn More</span></td>
               </tr>
               {{/each}}
