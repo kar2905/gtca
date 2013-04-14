@@ -5,6 +5,7 @@ GTCA.ApplicationController = Ember.Controller.extend({
 GTCA.Router.map(function() {
   this.resource('patient', { path: '/patient/:patient_id' }, function() {
     this.route("dosing");
+    this.route("disease");
   });
 });
 

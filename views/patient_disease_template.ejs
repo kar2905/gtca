@@ -1,12 +1,6 @@
 <div id="dosing">
-  {{view GTCA.DrugTextField placeholder="Enter condition to prescribe for..."
-                            class="condition"
-                            valueBinding="condition"}}
 
-  {{#if condition_specified }}
-    {{view GTCA.DrugTextField placeholder="Add drug..."
-                              class="drug"
-                              valueBinding="drug"}}
+
 
     <div class="results">
       {{view Bootstrap.Tabs itemTitleKey="title"
@@ -55,5 +49,5 @@
       </div>
       {{/with}}
     </div>
-  {{/if}} 
+  
 </div>
